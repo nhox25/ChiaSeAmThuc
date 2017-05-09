@@ -29,6 +29,7 @@ public class LoaiAmThuc extends HttpServlet {
 		// TODO Auto-generated method stub
 	}
 
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

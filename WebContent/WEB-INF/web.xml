@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-<display-name>ChiaSeAmThuc</display-name>
-<!--  admin -->
+  <display-name>ChiaSeAmThuc</display-name>
   <servlet>
     <servlet-name>ListUser</servlet-name>
     <servlet-class>action_admin.ListUsersAction</servlet-class>
@@ -9,7 +8,7 @@
   <servlet-mapping>
     <servlet-name>ListUser</servlet-name>
     <url-pattern>/admin/list-users</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
   <servlet>
     <servlet-name>LoginAdmin</servlet-name>
     <servlet-class>action_admin.LoginAction</servlet-class>
@@ -17,7 +16,7 @@
   <servlet-mapping>
     <servlet-name>LoginAdmin</servlet-name>
     <url-pattern>/admin/login</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
   <servlet>
     <servlet-name>LogoutAdmin</servlet-name>
     <servlet-class>action_admin.LogoutAction</servlet-class>
@@ -25,7 +24,7 @@
   <servlet-mapping>
     <servlet-name>LogoutAdmin</servlet-name>
     <url-pattern>/admin/logout</url-pattern>
-  </servlet-mapping> 
+  </servlet-mapping>
   <servlet>
     <servlet-name>DelUser</servlet-name>
     <servlet-class>action_admin.DelUsersAction</servlet-class>
@@ -82,8 +81,6 @@
     <servlet-name>ReturnContact</servlet-name>
     <url-pattern>/admin/processed-contact</url-pattern>
   </servlet-mapping>
-<!-- /admin -->
-<!-- home -->
   <servlet>
     <servlet-name>Home</servlet-name>
     <servlet-class>action_home.HomeAction</servlet-class>
@@ -156,7 +153,7 @@
     <servlet-name>ListProduct</servlet-name>
     <url-pattern>/home/list-product-user</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>DelProduct</servlet-name>
     <servlet-class>action_home.DelProductAction</servlet-class>
   </servlet>
@@ -164,7 +161,7 @@
     <servlet-name>DelProduct</servlet-name>
     <url-pattern>/home/del-product-user</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>DetailProduct</servlet-name>
     <servlet-class>action_home.DetailProductsAction</servlet-class>
   </servlet>
@@ -172,14 +169,12 @@
     <servlet-name>DetailProduct</servlet-name>
     <url-pattern>/home/detail-products</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
     <servlet-name>HistoryProduct</servlet-name>
     <servlet-class>action_home.HistoryProductsAction</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>HistoryProduct</servlet-name>
     <url-pattern>/home/history-products</url-pattern>
-  </servlet-mapping>  
-  
-  <!-- /home -->
+  </servlet-mapping>
 </web-app>

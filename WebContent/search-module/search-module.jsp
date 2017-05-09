@@ -19,17 +19,32 @@
 			            <!-- required for floating -->
 			            <!-- Nav tabs -->
 			            <ul class="nav nav-tabs tabs-left">
-			                <li class="active"><a href="#home" data-toggle="tab">Khu Vực</a></li>
-			                <li><a href="#profile" data-toggle="tab">Profile</a></li>
-			                <li><a href="#messages" data-toggle="tab">Messages</a></li>
+			                <li class="active"><a href="#khuvuc" data-toggle="tab">Khu Vực</a></li>
+			                <li><a href="#phanloai" data-toggle="tab">Phân Loại</a></li>
+			                <li><a href="#messages" data-toggle="tab"></a></li>
 
 			            </ul>
 			        </div>
 			        <div class="">
 			            <!-- Tab panes -->
 			            <div class="tab-content">
-			                <div class="tab-pane active" id="home">Home Tab.</div>
-			                <div class="tab-pane" id="profile">Profile Tab.</div>
+			                <div class="tab-pane active" id="khuvuc">
+				                <div class="form-group ">
+									<div class="col-sm-10">
+										<div class="checkbox-search"><label><input type="checkbox"> Ngũ Hành Sơn</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Thanh Khuê</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Liên Chiểu</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Cẩm Lệ</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Ngũ Hành Sơn</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Thanh Khuê</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Liên Chiểu</label></div>
+										<div class="checkbox-search"><label><input type="checkbox"> Cẩm Lệ</label></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+			                </div>
+			                <div class="tab-pane" id="phanloai">
+			                </div>
 			                <div class="tab-pane" id="messages">Messages Tab.</div>
 
 			            </div>

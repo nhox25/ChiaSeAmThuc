@@ -82,6 +82,32 @@
     <url-pattern>/admin/processed-contact</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>TypeProductAction</servlet-name>
+    <servlet-class>action_admin.TypeProductAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TypeProductAction</servlet-name>
+    <url-pattern>/admin/list-typeproducts</url-pattern>
+  </servlet-mapping>  
+  <servlet>
+    <servlet-name>AddTypeProductAction</servlet-name>
+    <servlet-class>action_admin.AddTypeProductsAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddTypeProductAction</servlet-name>
+    <url-pattern>/admin/add-typeproducts</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <servlet-name>DelTypeProductAction</servlet-name>
+    <servlet-class>action_admin.DelTypeProductsAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DelTypeProductAction</servlet-name>
+    <url-pattern>/admin/del-typeproducts</url-pattern>
+  </servlet-mapping> 
+  
+<!-- home -->  
+  <servlet>   
     <servlet-name>Home</servlet-name>
     <servlet-class>action_home.HomeAction</servlet-class>
   </servlet>

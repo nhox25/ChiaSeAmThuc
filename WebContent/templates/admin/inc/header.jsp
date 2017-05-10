@@ -71,8 +71,8 @@
               <ul class="text-uppercase">
               <%if(account!=null){%>
                 <li><a href="<%=request.getContextPath()%>/admin/list-users" class="active">Users</a></li>
-                <li><a href="">Dashboard</a></li>
-                <li><a href="<%=request.getContextPath()%>/admin/list-contact">Contact</a></li>
+                <li><a href="<%=request.getContextPath()%>/admin/list-typeproducts">TypeProducts</a></li>
+                <li><a href="<%=request.getContextPath()%>/admin/list-contact">Contacts</a></li>
                 <li><a href="<%=request.getContextPath()%>/admin/logout">Sign out</a></li>
               </ul>
               <li>

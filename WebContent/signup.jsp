@@ -13,7 +13,7 @@
 	<!-- //breadcrumb -->
 	<!-- sign up-page -->
 	<div class="login-page about">
-		<img class="login-w3img" src="images/img3.jpg" alt="">
+		<img class="login-w3img" src="" alt="">
 		<div class="container"> 
 			<h3 class="w3ls-title w3ls-title1">Đăng ký tài khoản</h3>  
 			<div class="login-agileinfo"> 
@@ -24,8 +24,10 @@
 					out.print(msg);}%></div> 
 					<input class="agile-ltext" type="text" name="username" placeholder="Tên đăng nhập" required="">
 					<input class="agile-ltext" type="email" name="email" placeholder="Địa chỉ email" required="">
-					<input class="agile-ltext" type="password" name="password" placeholder="Mật khẩu" required="">
-					<input class="agile-ltext" type="password" name="re_password" placeholder="Xác nhận mật khẩu" required="">
+					<input class="agile-ltext" type="password" name="password" placeholder="Mật khẩu" required="" id="password">
+					<input class="agile-ltext" type="password" name="re_password" placeholder="Xác nhận mật khẩu" required="" id="confirm_password" onChange="isPasswordMatch();">
+					<div style="font-family: initial;color: orangered;font-style: italic;" id="PasswordFalse"></div>
+					<div style="font-family: initial;color: green;font-style: italic;" id="PasswordTrue"></div>
 					<input class="agile-ltext" type="text" name="fullname" placeholder="Họ và tên" required="">
 					<input class="agile-ltext" type="text" name="phone" placeholder="Số điện thoại" required="">
 					<input class="agile-ltext" type="text" name="address" placeholder="Địa chỉ" required="">
@@ -49,41 +51,6 @@
 	<!-- //sign up-page -->  
 	<!-- subscribe -->
 	<%@include file="templates/public/inc/footer.jsp"%>
-	<!-- //subscribe --> 
-	<!-- footer -->
-	<!-- //footer -->
-	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-        w3ls.render();
-
-        w3ls.cart.on('w3sb_checkout', function (evt) {
-        	var items, len, i;
-
-        	if (this.subtotal() > 0) {
-        		items = this.items();
-
-        		for (i = 0, len = items.length; i < len; i++) { 
-        		}
-        	}
-        });
-    </script>  
-	<!-- //cart-js -->	
-	<!-- start-smooth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>  
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>	
-	<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-			
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-				});
-			});
-	</script>
-	<!-- //end-smooth-scrolling -->	  
-	<!-- smooth-scrolling-of-move-up -->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			/*
@@ -99,10 +66,38 @@
 			
 		});
 	</script>
-	<!-- //smooth-scrolling-of-move-up --> 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+	var password = document.getElementById("password"), confirm_password = document
+			.getElementById("confirm_password");
+
+	function validatePassword() {
+		if (password.value != confirm_password.value) {
+			confirm_password
+					.setCustomValidity("Password không khớp? Nhập lại ");
+		} else {
+			confirm_password.setCustomValidity('');
+		}
+	}
+
+	password.onchange = validatePassword;
+	confirm_password.onkeyup = validatePassword;
+</script>
+<script type="text/javascript">
+	function isPasswordMatch() {
+		var password = $("#password").val();
+		var confirmPassword = $("#confirm_password").val();
+
+		if (password != confirmPassword) {
+			$("#PasswordFalse").html("Password không khớp? Nhập lại ");
+			$("#PasswordTrue").html(" ");
+		} else if (password == confirmPassword) {
+			$("#PasswordTrue").html("Nhập mật khẩu chính xác!");
+			$("#PasswordFalse").html(" ");
+		}
+	}
+	$(document).ready(function() {
+		$("#confirm_password").keyup(isPasswordMatch);
+	});
+</script>
 </body>
 </html>

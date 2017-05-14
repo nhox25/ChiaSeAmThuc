@@ -4,18 +4,19 @@ public class Products {
 	private int id_product;
 	private String name_product;
 	private String address_product;
-	private String dictric_product;
 	private int price_product;
 	private int phone_product;
 	private String email_product;
 	private String website_product;
 	private String description_product;
-	private String typle_product;
 	private String user_product;
 	private String picture1_product;
-//	private String picture2_product;
 	private String timecreate_product;
 	private int status_product;
+	private int idCat;
+	private String nameCat;
+	private int idDictricts;
+	private String nameDictricts;
 	
 	public int getId_product() {
 		return id_product;
@@ -34,12 +35,6 @@ public class Products {
 	}
 	public void setAddress_product(String address_product) {
 		this.address_product = address_product;
-	}
-	public String getDictric_product() {
-		return dictric_product;
-	}
-	public void setDictric_product(String dictric_product) {
-		this.dictric_product = dictric_product;
 	}
 	public int getPrice_product() {
 		return price_product;
@@ -71,12 +66,6 @@ public class Products {
 	public void setDescription_product(String description_product) {
 		this.description_product = description_product;
 	}
-	public String getTyple_product() {
-		return typle_product;
-	}
-	public void setTyple_product(String typle_product) {
-		this.typle_product = typle_product;
-	}
 	public String getUser_product() {
 		return user_product;
 	}
@@ -89,12 +78,6 @@ public class Products {
 	public void setPicture1_product(String picture1_product) {
 		this.picture1_product = picture1_product;
 	}
-//	public String getPicture2_product() {
-//		return picture2_product;
-//	}
-//	public void setPicture2_product(String picture2_product) {
-//		this.picture2_product = picture2_product;
-//	}
 	public String getTimecreate_product() {
 		return timecreate_product;
 	}
@@ -107,35 +90,76 @@ public class Products {
 	public void setStatus_product(int status_product) {
 		this.status_product = status_product;
 	}
+	
+	public int getIdCat() {
+		return idCat;
+	}
+	public void setIdCat(int idCat) {
+		this.idCat = idCat;
+	}
+	public String getNameCat() {
+		return nameCat;
+	}
+	public void setNameCat(String nameCat) {
+		this.nameCat = nameCat;
+	}
+	
+	public int getIdDictricts() {
+		return idDictricts;
+	}
+	public void setIdDictricts(int idDictricts) {
+		this.idDictricts = idDictricts;
+	}
+	public String getNameDictricts() {
+		return nameDictricts;
+	}
+	public void setNameDictricts(String nameDictricts) {
+		this.nameDictricts = nameDictricts;
+	}
 	public Products() {
 		super();
 	}
 	public Products(int id_product, String name_product,
 			String address_product, String dictric_product, int price_product,
 			int phone_product, String email_product, String website_product,
-			String description_product, String typle_product,
-			String user_product, String picture1_product,
-			String timecreate_product,
-			int status_product) {
+			String description_product,String user_product, String picture1_product,
+			String timecreate_product,int status_product) {
 		super();
 		this.id_product = id_product;
 		this.name_product = name_product;
 		this.address_product = address_product;
-		this.dictric_product = dictric_product;
 		this.price_product = price_product;
 		this.phone_product = phone_product;
 		this.email_product = email_product;
 		this.website_product = website_product;
 		this.description_product = description_product;
-		this.typle_product = typle_product;
 		this.user_product = user_product;
 		this.picture1_product = picture1_product;
-//		this.picture2_product = picture2_product;
 		this.timecreate_product = timecreate_product;
 		this.status_product = status_product;
 	}
-	
-	
-	
-	
+	public Products(int id_product, String name_product,
+			String address_product, int price_product,
+			int phone_product, String email_product, String website_product,
+			String description_product,String user_product, String picture1_product,
+			String timecreate_product, int status_product, int idCat,int idDictricts, 
+			String nameCat,String nameDictricts) {
+		super();
+		this.id_product = id_product;
+		this.name_product = name_product;
+		this.address_product = address_product;
+		this.price_product = price_product;
+		this.phone_product = phone_product;
+		this.email_product = email_product;
+		this.website_product = website_product;
+		this.description_product = description_product;
+		this.user_product = user_product;
+		this.picture1_product = picture1_product;
+		this.timecreate_product = timecreate_product;
+		this.status_product = status_product;
+		this.idCat = idCat;
+		this.nameCat = nameCat;
+		this.idDictricts = idDictricts;
+		this.nameDictricts = nameDictricts;
+	}
 }

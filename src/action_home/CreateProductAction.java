@@ -3,6 +3,7 @@ package action_home;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,9 +20,13 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.io.FilenameUtils;
 
+import bean.Dictricts;
 import bean.Products;
+import bean.TypeProduct;
 import bean.Users;
+import bo.DicTrictstBO;
 import bo.ProductBO;
+import bo.TypeProductBO;
 
 /**
  */
@@ -62,10 +67,20 @@ public class CreateProductAction extends HttpServlet {
 		
 		ProductBO proBO = new ProductBO();
 		
+		TypeProductBO catBO = new TypeProductBO();
+		DicTrictstBO dictrictsBO= new DicTrictstBO();
+		
+		
+		ArrayList<TypeProduct> listCat = catBO.getListCat();
+		request.setAttribute("listCat", listCat);
+		
+		ArrayList<Dictricts> listDictricts = dictrictsBO.getListDictricts();
+		request.setAttribute("listDictricts", listDictricts);
+		
 		String type = request.getParameter("type");
 		if(!"load".equals(type)){	
-			String name_product="", address_product="", dicrit_product="", email="", website="",description="";
-			String style="", picture1="";
+			String name_product="", address_product="", email="", website="",description="";
+			String picture1=""; int idCat=0; int dicrit_product= 0;
 			int price=0; int phone = 0; int status = 0;	
 			DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
 			ServletFileUpload upload = new ServletFileUpload(fileItemFactory);
@@ -73,16 +88,17 @@ public class CreateProductAction extends HttpServlet {
 				List<FileItem> formitems = upload.parseRequest(request);
 				for (FileItem item : formitems) {
 					if (item.isFormField()) { // phan tu khong phai la file
+						
 						String name = item.getFieldName();
 						String value = new String(item.getString().getBytes("ISO-8859-1"),"UTF-8");
 						switch (name) {	
 						case "name_product": name_product = value; break;
 						case "address_product": address_product = value; break;
-						case "dicrit_product": dicrit_product = value; break;
+						case "dicrit_product": dicrit_product = Integer.parseInt(value); break;
 						case "email": email = value; break;
 						case "website": website = value; break;
 						case "description": description = value; break;
-						case "style": style = value; break;
+						case "style": idCat = Integer.parseInt(value); break;
 						case "price": price = Integer.parseInt(value); break;
 						case "phone": phone = Integer.parseInt(value); break;
 							}	
@@ -125,33 +141,17 @@ public class CreateProductAction extends HttpServlet {
 			Products pro = new Products();
 			pro.setName_product(name_product);
 			pro.setAddress_product(address_product);
-			pro.setDictric_product(dicrit_product);
+			pro.setIdDictricts((dicrit_product));
 			pro.setEmail_product(email);
 			pro.setWebsite_product(website);
 			pro.setDescription_product(description);
-			pro.setTyple_product(style);
 			pro.setPicture1_product(picture1);
-//			pro.setPicture2_product(picture2);
 			pro.setTimecreate_product(time);
 			pro.setUser_product(username);
 			pro.setPrice_product(price);
 			pro.setPhone_product(phone);
 			pro.setStatus_product(status);
-			
-			System.out.println("name" +name_product);
-			System.out.println("adress" +address_product);
-			System.out.println("dicrit" +dicrit_product);
-			System.out.println("email" +email);
-			System.out.println("website" +website);
-			System.out.println("description" +description);
-			System.out.println("style" +style);
-			System.out.println("picture1" +picture1);
-//			System.out.println("picture2" +picture2);
-			System.out.println("time" +time);
-			System.out.println("username" +username);
-			System.out.println("price" +price);
-			System.out.println("phone" +phone);
-			System.out.println("status" +status);
+			pro.setIdCat(idCat);
 			
 			if(proBO.addPro(pro)){
 				response.sendRedirect("list-product-user");	

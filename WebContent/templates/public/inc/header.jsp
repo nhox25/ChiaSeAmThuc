@@ -1,3 +1,6 @@
+<%@page import="bo.DicTrictstBO"%>
+<%@page import="bean.TypeProduct"%>
+<%@page import="bo.TypeProductBO"%>
 <%@page import="bean.Users"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -11,20 +14,22 @@
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/ckeditor/ckeditor.js"></script>
-<link href="<%=request.getContextPath()%>/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 
-<link href="<%=request.getContextPath()%>/css/font-awesome.css" rel="stylesheet"> <!-- font-awesome icons -->
+<link href="<%=request.getContextPath()%>/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="<%=request.getContextPath()%>/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"/> 
-<link href="<%=request.getContextPath()%>/css/style.css" type="text/css" rel="stylesheet" media="all">  <!-- Owl-Carousel-CSS -->
-<!-- //Custom Theme files --> 
-<!-- js -->
-<script src="<%=request.getContextPath()%>/js/jquery-2.2.3.min.js"></script> 
-<!-- //js -->
-<!-- web-fonts -->   
-<link href="<%=request.getContextPath()%>//fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet"> 
-<link href="<%=request.getContextPath()%>///fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
-<!-- //web-fonts -->
+<link href="<%=request.getContextPath()%>/css/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="<%=request.getContextPath()%>/css/font-awesome.css" type="text/css" rel="stylesheet" media="all">
+
+<script src="<%=request.getContextPath()%>/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/jquery-2.2.3.min.js" type="text/javascript"></script> 
+<script src="<%=request.getContextPath()%>/js/jquery.mousewheel.js"type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/SmoothScroll.min.js"type="text/javascript"></script>  
+<script src="<%=request.getContextPath()%>/js/move-top.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/easing.js" type="text/javascript"></script>	
+<script src="<%=request.getContextPath()%>/js/owl.carousel.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="<%=request.getContextPath()%>/js/minicart.js" type="text/javascript"></script>
 </head>
 <body> 
 	<!-- banner -->
@@ -94,36 +99,31 @@
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
 									<ul class="dropdown-menu multi-column columns-3">
 										<div class="row">
-											<div class="col-sm-4">
+											<div class="col-sm-5">
 												<ul class="multi-column-dropdown">
 													<h6>Quận</h6>  
-													<li><a href="menu.html">Cẩm Lệ</a></li> 
-													<li><a href="menu.html">Liên Chiểu</a></li> 
-													<li><a href="menu.html">Hải Châu</a></li> 
-													<li><a href="menu.html">Thanh Khuê</a></li>
-													<li><a href="menu.html">Sơn Trà</a></li>
-													<li><a href="menu.html">Hòa Vang</a></li>
-													<li><a href="menu.html">Ngũ Hành Sơn</a></li>
+													<%DicTrictstBO dictricts3 = new DicTrictstBO();
+														if(!dictricts3.getListDictricts().isEmpty()){
+			            								for(int i = 0; i < dictricts3.getListDictricts().size();i++ ){%>
+													<li><a href="<%=request.getContextPath()%>/home/product-dictricts?id=<%=dictricts3.getListDictricts().get(i).getId_dictricts()%>"><%=dictricts3.getListDictricts().get(i).getNam_dictricts()%></a></li>
+													<%}}else{ %>
+													<li><a></a></li>
+													<%} %>
 												</ul>
 											</div>
-											<div class="col-sm-4">
+											<div class="col-sm-5">
 												<ul class="multi-column-dropdown">
-													<h6>Cuisine</h6> 
-													<li><a href="menu.html">Indian Recipes</a></li> 
-													<li><a href="menu.html">American Recipes</a></li> 
-													<li><a href="menu.html">French Recipes</a></li> 
-													<li><a href="menu.html">Italian Recipes</a></li> 
+													<h6>Phân loại</h6> 
+													<%TypeProductBO type3 = new TypeProductBO();
+														if(!type3.getListCat().isEmpty()){
+			            								for(int i = 0; i < type3.getListCat().size();i++ ){%>
+													<li><a href="<%=request.getContextPath()%>/home/product-typroducts?id=<%=type3.getListCat().get(i).getIdTypePro()%>"><%=type3.getListCat().get(i).getNameTypePro()%></a></li>
+													<%}}else{ %>
+													<li><a></a></li>
+													<%} %>
 												</ul>
+												<div class="clearfix"></div>
 											</div>
-											<div class="col-sm-4">
-												<ul class="multi-column-dropdown">
-													<h6>Box type</h6> 
-													<li><a href="menu.html">Diet</a></li> 
-													<li><a href="menu.html">Mini</a></li> 
-													<li><a href="menu.html">Regular</a></li> 
-													<li><a href="menu.html">Special</a></li> 
-												</ul>
-											</div> 
 											<div class="clearfix"></div>
 										</div>
 									</ul>

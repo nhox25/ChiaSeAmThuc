@@ -17,7 +17,7 @@
         </a>
           <div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
-              <table class="table table-striped table-bordered templatemo-user-table">
+              <table id="myTable" class="table table-striped table-bordered templatemo-user-table">
                 <thead>
                   <tr>
                     <td><a href="" class="white-text templatemo-sort-by"># <span class="caret"></span></a></td>
@@ -43,21 +43,7 @@
                 </tbody>
               </table>    
             </div>                          
-          </div>          
-          <div class="pagination-wrap">
-            <ul class="pagination">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li class="active"><a href="#">3 <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true"><i class="fa fa-play"></i></span>
-                </a>
-              </li>
-            </ul>
-          </div>          
+          </div>                  
           <footer class="text-right">
             <p>Copyright &copy; 2084 Company Name 
             | Designed by <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>

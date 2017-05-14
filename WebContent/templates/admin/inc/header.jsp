@@ -19,14 +19,18 @@
     <link type="text/css" href="<%=request.getContextPath()%>/admin/css/font-awesome.min.css" rel="stylesheet">
     <link type="text/css" href="<%=request.getContextPath()%>/admin/css/bootstrap.min.css" rel="stylesheet">
     <link type="text/css" href="<%=request.getContextPath()%>/admin/css/templatemo-style.css" rel="stylesheet">
-    
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link type="text/css" href="<%=request.getContextPath()%>/admin/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="<%=request.getContextPath()%>/admin/js/templatemo-script.js"></script> 
+    <script type="text/javascript" src="<%=request.getContextPath()%>/admin/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/admin/js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/admin/js/dataTables.bootstrap.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/admin/js/jquery.dataTables.min.js"></script>
 
+	<script>
+      	$(document).ready(function(){
+    	    $('#myTable').DataTable();
+    	});
+    </script>
   </head>
   <body>  
     <!-- Left column -->
@@ -71,7 +75,8 @@
               <ul class="text-uppercase">
               <%if(account!=null){%>
                 <li><a href="<%=request.getContextPath()%>/admin/list-users" class="active">Users</a></li>
-                <li><a href="<%=request.getContextPath()%>/admin/list-typeproducts">TypeProducts</a></li>
+                <li><a href="<%=request.getContextPath()%>/admin/list-typeproducts">Types</a></li>
+                <li><a href="<%=request.getContextPath()%>/admin/list-products">Products</a></li>
                 <li><a href="<%=request.getContextPath()%>/admin/list-contact">Contacts</a></li>
                 <li><a href="<%=request.getContextPath()%>/admin/logout">Sign out</a></li>
               </ul>

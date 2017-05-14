@@ -1,3 +1,5 @@
+<%@page import="bean.Dictricts"%>
+<%@page import="bean.TypeProduct"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -26,27 +28,33 @@
 						<input class="agile-ltext" type="text" name="name_product" placeholder="Tên món ăn" required="">
 						<input class="agile-ltext" type="text" name="address_product" placeholder="Địa chỉ" required="">
 						<select class="agile-ltext" name="dicrit_product" required="" required=""="Xin chọn quận">
-						<option value="">Chọn Quận</option>
-						<option value="Cẩm Lệ">Quận Cẩm Lệ</option>
-						<option value="Hải Châu">Quận Hải Châu</option>
-						<option value="Liên Chiểu">Quận Liên Chiểu</option>
-						<option value="Ngũ Hành Sơn">Quận Ngũ Hành Sơn</option>
-						<option value="Sơn Trà">Quận Sơn Trà</option>
-						<option value="Thanh Khuê">Quận Thanh Khê</option>
-						<option value="Hòa Vang">Hòa Vang</option>
-						<option value="Hoàng Sa">Hoàng Sa</option></select>
+						<%
+						ArrayList<Dictricts> listDictricts = (ArrayList<Dictricts>) request.getAttribute("listDictricts");
+						if(listDictricts!=null){
+						for(Dictricts dictricts: listDictricts){	
+						%>
+						<option value="<%=dictricts.getId_dictricts()%>"><%=dictricts.getNam_dictricts() %></option>
+						<% }} %>
+						</select>
 						<input class="agile-ltext" type="text" name="price" placeholder="Giá bán" required="">
 						<input class="agile-ltext" type="text" name="phone" placeholder="Điện thoại" required="">
 						<input class="agile-ltext" type="email" name="email" placeholder="Email" required="">
 						<input class="agile-ltext" type="text" name="website" placeholder="Website" required="">
 						<br>
 						<div>Mô Tả Thêm</div>
-						<textarea class="ckeditor" name="description" placeholder="Mô tả" required=""></textarea>
+						<textarea style="margin: 0px; height: 122px; width: 427px;" 
+							class="agile-ltext" name="description" placeholder="Mô tả" required=""></textarea>
 						<select class="agile-ltext" name="style" required="" required="Xin chọn loại thức ăn">
-						<option value="">Thuộc loại</option>
-					<option value="Chay">Chay</option>
-						<option value="Mặn">Mặn</option>
-						<option value="Chay và Mặn">Chay và mặn</option></select>
+						<%
+						ArrayList<TypeProduct> listCat = (ArrayList<TypeProduct>) request.getAttribute("listCat");
+						if(listCat!=null){
+						for(TypeProduct cat: listCat){	
+						%>
+						<option value="<%=cat.getIdTypePro()%>"><%=cat.getNameTypePro() %></option>
+						<% }} %>
+						</select>
+						
+						
 						<br/>
 						<input type="file" name="picture1" value="" />
 						<br/>
@@ -59,31 +67,7 @@
 	</div>
 	<!-- //sign up-page -->  
 	<!-- subscribe -->
-	<%@include file="templates/public/inc/footer.jsp"%>
-	<!-- //subscribe --> 
-	<!-- footer -->
-	<!-- //footer -->
-	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-        w3ls.render();
-
-        w3ls.cart.on('w3sb_checkout', function (evt) {
-        	var items, len, i;
-
-        	if (this.subtotal() > 0) {
-        		items = this.items();
-
-        		for (i = 0, len = items.length; i < len; i++) { 
-        		}
-        	}
-        });
-    </script>  
-	<!-- //cart-js -->	
-	<!-- start-smooth-scrolling -->
-	<script src="js/SmoothScroll.min.js"></script>  
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>	
+	<%@include file="templates/public/inc/footer.jsp"%> 
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -97,14 +81,6 @@
 	<!-- smooth-scrolling-of-move-up -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
 			
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
@@ -114,6 +90,5 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
 </body>
 </html>

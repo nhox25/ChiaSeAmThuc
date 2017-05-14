@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.Ads;
 import bean.Products;
+import bo.AdsBO;
 import bo.ProductBO;
 
 /**
@@ -41,6 +43,13 @@ public class HomeAction extends HttpServlet {
 		
 		ProductBO proBO = new ProductBO();
 		
+		AdsBO adsBO = new AdsBO();
+		ArrayList<Ads> listAds = adsBO.getListAds();
+		request.setAttribute("listAds", listAds);
+			
+		int sotin = proBO.countProByDictricts("3");
+		request.setAttribute("sotin", sotin);
+		
 		ArrayList<Products> listProHome = proBO.getAllProducts();
 		request.setAttribute("listProHome", listProHome);
 		
@@ -53,7 +62,6 @@ public class HomeAction extends HttpServlet {
 		ArrayList<Products> listProDeXuat2 = proBO.getAllProducts2();
 		request.setAttribute("listProDeXuat2", listProDeXuat2);
 	
-
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/products.jsp");
 		rd.forward(request, response);

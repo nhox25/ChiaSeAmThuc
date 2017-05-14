@@ -85,7 +85,7 @@ public class TypeProductDAO {
 	}
 
 	public boolean editCat(TypeProduct type) {
-		String query = "UPDATE type_products SET name = '"+type.getNameTypePro()+"' WHERE id_type_products = "+type.getIdTypePro();
+		String query = "UPDATE type_products SET name_type_products = '"+type.getNameTypePro()+"' WHERE id_type_products = "+type.getIdTypePro();
 		int check = 0;
 		try {
 			Statement stm = db.connectDB().createStatement();
@@ -150,6 +150,12 @@ public class TypeProductDAO {
 			e.printStackTrace();
 		}
 		return cat;
+	}
+
+	public boolean searchModule(String district) {
+		// TODO Auto-generated method stub
+		
+		return false;
 	}
 
 }

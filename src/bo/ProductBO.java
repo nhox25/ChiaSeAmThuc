@@ -13,12 +13,37 @@ public class ProductBO {
 	public ArrayList<Products> getlistPro(Users user) {
 		return ProductDAO.getListPro(user);
 	}
+	public ArrayList<Products> getAllProductsAdmin() {
+		return ProductDAO.getAllProductsAdmin();
+		}
 	public ArrayList<Products> getAllProducts() {
 		return ProductDAO.getAllProducts();
 	}
 	public ArrayList<Products> getAllProducts2() {
 		return ProductDAO.getAllProducts2();
 	}
+	public ArrayList<Products> searchModule(String typero[], String dictrict[]) {
+		// TODO Auto-generated method stub
+		return ProductDAO.searchModule(typero,dictrict);
+	}
+	public ArrayList<Products> searchModuleDictricst(String[] dictrict) {
+		// TODO Auto-generated method stub
+		return ProductDAO.searchModuleDictricst(dictrict);
+	}
+	public ArrayList<Products> searchModuleType(String[] dictrict) {
+		// TODO Auto-generated method stub
+		return ProductDAO.searchModuleType(dictrict);
+	}
+	
+	public ArrayList<Products> getListProDictrict(String dictrict) {
+		// TODO Auto-generated method stub
+		return ProductDAO.getListProDictrict(dictrict);
+	}
+	public ArrayList<Products> getListProType(String idtype) {
+		// TODO Auto-generated method stub
+		return ProductDAO.getListProType(idtype);
+	}
+
 	public boolean addPro(Products pro) {
 		return ProductDAO.getaddPro(pro);
 	}
@@ -38,10 +63,10 @@ public class ProductBO {
 //		return ProductDAO.getListProByCat(idcat);
 //	}
 //
-	public ArrayList<Products> getlistProPerPage(int offset, int number) {
-		return ProductDAO.getlistProPerPage(offset,number);
-					
-	}
+//	public ArrayList<Products> getlistProPerPage(int offset, int number) {
+//		return ProductDAO.getlistProPerPage(offset,number);
+//					
+//	}
 
 	public int countAllPro() {
 		// TODO Auto-generated method stub
@@ -63,9 +88,10 @@ public class ProductBO {
 //		return ProductDAO.getListProByCat(pro);
 //	}
 //
-//	public int countAllPro(String idCat) {
-//		// TODO Auto-generated method stub
-//		return ProductDAO.countAllPro(idCat);
-//	}
+	public int countProByDictricts(String dictricts) {
+		// TODO Auto-generated method stub
+		return ProductDAO.countProByDictricts(dictricts);
+	}
+
 
 }

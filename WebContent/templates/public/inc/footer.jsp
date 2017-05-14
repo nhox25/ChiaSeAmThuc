@@ -7,7 +7,7 @@
 			<div class="col-md-6 social-icons w3-agile-icons">
 				<h4>Keep in touch</h4>  
 				<ul>
-					<li><a href="#" class="fa fa-facebook icon facebook"> </a></li>
+					<li><a href="" class="fa fa-facebook icon facebook"> </a></li>
 					<li><a href="#" class="fa fa-twitter icon twitter"> </a></li>
 					<li><a href="#" class="fa fa-google-plus icon googleplus"> </a></li>
 					<li><a href="#" class="fa fa-dribbble icon dribbble"> </a></li>
@@ -27,7 +27,6 @@
 					<input type="submit" value="Subscribe">
 					<div class="clearfix"> </div> 
 				</form>  
-				<img src="images/i1.png" class="sub-w3lsimg" alt=""/>
 			</div>
 			<div class="clearfix"> </div> 
 		</div>

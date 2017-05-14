@@ -98,13 +98,40 @@
     <url-pattern>/admin/add-typeproducts</url-pattern>
   </servlet-mapping> 
   <servlet>
-    <servlet-name>DelTypeProductAction</servlet-name>
+    <servlet-name>EditTypeProductAction</servlet-name>
+    <servlet-class>action_admin.EditTypeProductsAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditTypeProductAction</servlet-name>
+    <url-pattern>/admin/edit-typeproducts</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>ListProductsAction</servlet-name>
+    <servlet-class>action_admin.ListProductsAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ListProductsAction</servlet-name>
+    <url-pattern>/admin/list-products</url-pattern>
+  </servlet-mapping> 
+  <servlet>
+    <servlet-name>DelProductAction</servlet-name>
+    <servlet-class>action_admin.DelProductAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DelProductAction</servlet-name>
+    <url-pattern>/admin/del-products</url-pattern>
+  </servlet-mapping> 
+  
+  <servlet>
+    <servlet-name>DelTypeProductsAction</servlet-name>
     <servlet-class>action_admin.DelTypeProductsAction</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DelTypeProductAction</servlet-name>
+    <servlet-name>DelTypeProductsAction</servlet-name>
     <url-pattern>/admin/del-typeproducts</url-pattern>
   </servlet-mapping> 
+  
   
 <!-- home -->  
   <servlet>   
@@ -202,5 +229,32 @@
   <servlet-mapping>
     <servlet-name>HistoryProduct</servlet-name>
     <url-pattern>/home/history-products</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>SearchModuleAction</servlet-name>
+    <servlet-class>action_home.SearchModuleAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SearchModuleAction</servlet-name>
+    <url-pattern>/home/search</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>ProductsByTypeAction</servlet-name>
+    <servlet-class>action_home.ProductsByTypeAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductsByTypeAction</servlet-name>
+    <url-pattern>/home/product-typroducts</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ProductsByDictrictAction</servlet-name>
+    <servlet-class>action_home.ProductsByDictrictAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductsByDictrictAction</servlet-name>
+    <url-pattern>/home/product-dictricts</url-pattern>
   </servlet-mapping>
 </web-app>

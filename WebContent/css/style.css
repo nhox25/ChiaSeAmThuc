@@ -1,3 +1,6 @@
+ol, ul {
+	list-style: none;
+}
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -1068,6 +1071,9 @@ h3.w3ls-title.w3ls-title1 {
     text-transform: capitalize;
     color: #fff;
     letter-spacing: 6px;
+    overflow: hidden;
+    max-height: 1.1em;
+    line-height: 1em;
 }
 /*-- //team --*/  
 .jarallax {
@@ -1188,6 +1194,9 @@ h3.w3ls-title.w3ls-title1 {
     font-weight: 300;
     letter-spacing: 4px;
     font-family: 'Yantramanav', sans-serif;
+    overflow: hidden;
+    max-height: 2.6em;
+    line-height: 1.3em;
 }
 .back p {
     margin: 0.8em 0;
@@ -1759,9 +1768,7 @@ p.sbmincart-empty-text {
     color: #999;
 }
 .single-price ul li:nth-child(1) {
-    font-size: 2.8em;
-    font-weight: 300;
-	margin-right: 0.5em;
+
 }
 .single-price ul li span.w3off {
     font-size: 1.5em;

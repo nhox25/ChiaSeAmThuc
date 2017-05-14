@@ -17,15 +17,15 @@
         </a>
           <div class="templatemo-content-widget no-padding">
             <div class="panel panel-default table-responsive">
-              <table class="table table-striped table-bordered templatemo-user-table">
+              <table id="myTable" class="table table-striped table-bordered templatemo-user-table" cellspacing="0" width="100%">
                 <thead>
                   <tr>
-                    <td><a href="" class="white-text templatemo-sort-by"># <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">User Name <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Full Name <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Address <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Phone <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Email <span class="caret"></span></a></td>
+                    <td>#</td>
+                    <td>User Name</td>
+                    <td>Full Name</td>
+                    <td>Address</td>
+                    <td>Phone</td>
+                    <td>Email</td>
                     <td>Edit</td>
                     <td>Delete</td>
                   </tr>
@@ -69,21 +69,7 @@
                 </tbody>
               </table>    
             </div>                          
-          </div>          
-          <div class="pagination-wrap">
-            <ul class="pagination">
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li class="active"><a href="#">3 <span class="sr-only">(current)</span></a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                <a href="#" aria-label="Next">
-                  <span aria-hidden="true"><i class="fa fa-play"></i></span>
-                </a>
-              </li>
-            </ul>
-          </div>          
+          </div>                 
           <footer class="text-right">
             <p>Copyright &copy; 2084 Company Name 
             | Designed by <a href="http://www.templatemo.com" target="_parent">templatemo</a></p>
@@ -91,8 +77,7 @@
         </div>
     
     <!-- JS -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
-    <script type="text/javascript" src="js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+
     <script>
       $(document).ready(function(){
         // Content widget with background image

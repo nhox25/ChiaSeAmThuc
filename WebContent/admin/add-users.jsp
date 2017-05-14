@@ -44,11 +44,13 @@
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputNewPassword">Password</label>
-                    <input type="password" name="password" class="form-control" id="inputNewPassword" placeholder="Password" required="">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required="">
                 </div>
                 <div class="col-lg-6 col-md-6 form-group">                  
                     <label for="inputConfirmNewPassword">Confirm Password</label>
-                    <input type="password" name="confirm-password"class="form-control" id="inputConfirmNewPassword" placeholder="Confirm Password" required="">
+                    <input type="password" name="confirm-password"class="form-control" id="confirm_password" placeholder="Confirm Password" required="">
+                    <div style="font-family: initial;color: orangered;font-style: italic;" id="PasswordFalse"></div>
+					<div style="font-family: initial;color: green;font-style: italic;" id="PasswordTrue"></div>
                 </div>
               </div>
               <div class="form-group text-right">
@@ -64,10 +66,40 @@
         </div>
       </div>
     </div>
-
     <!-- JS -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>        <!-- jQuery -->
-    <script type="text/javascript" src="js/bootstrap-filestyle.min.js"></script>  <!-- http://markusslima.github.io/bootstrap-filestyle/ -->
-    <script type="text/javascript" src="js/templatemo-script.js"></script>        <!-- Templatemo Script -->
+    <script type="text/javascript">
+	var password = document.getElementById("password"), confirm_password = document
+			.getElementById("confirm_password");
+
+	function validatePassword() {
+		if (password.value != confirm_password.value) {
+			confirm_password
+					.setCustomValidity("Password không khớp? Nhập lại ");
+		} else {
+			confirm_password.setCustomValidity('');
+		}
+	}
+
+	password.onchange = validatePassword;
+	confirm_password.onkeyup = validatePassword;
+</script>
+<script type="text/javascript">
+	function isPasswordMatch() {
+		var password = $("#password").val();
+		var confirmPassword = $("#confirm_password").val();
+
+		if (password != confirmPassword) {
+			$("#PasswordFalse").html("Password không khớp? Nhập lại ");
+			$("#PasswordTrue").html(" ");
+		} else if (password == confirmPassword) {
+			$("#PasswordTrue").html("Nhập mật khẩu chính xác!");
+			$("#PasswordFalse").html(" ");
+		}
+	}
+	$(document).ready(function() {
+		$("#confirm_password").keyup(isPasswordMatch);
+	});
+</script>
+
   </body>
 </html>

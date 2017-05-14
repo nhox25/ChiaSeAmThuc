@@ -48,4 +48,6 @@ public class TypeProductBO {
 		return typeProDAO.getDetail(idCat);
 	}
 
+
+
 }

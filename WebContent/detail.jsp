@@ -15,7 +15,7 @@
 						</div>
 						<div class="col-md-7 modal_body_right single-top-right"> 
 							<h3 class="item_name"><%=pro.getName_product() %></h3>
-							<p><%=pro.getDictric_product() %></p>
+							<p><%=pro.getNameDictricts() %></p>
 							<div class="single-rating">
 								<ul>
 									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
